@@ -15,7 +15,10 @@ app.post('/' , function(req, res){
 	console.log(task);
 	console.log(name);
 	
-	if(task == 1){RegUsr(req);}
+	if(task == 1){RegUsr(req);
+	res.write("Executing Reg");	
+	}
+	if (task == 2){AuthenticateUser(req);}
 
 
 });
@@ -46,20 +49,29 @@ con.connect(function(err) {
 	console.log("Connected to DB!")
 });
 
-var userid = req.body.userid;
+
 var user = req.body.user;
 var name = req.body.name;
 var email = req.body.email;
 var pass = req.body.password;
 
-var sql = "INSERT INTO users (userid, user, name, email, pass) VALUES ?";
-var values = [[userid , user , name , email , pass]];
+var sql = "INSERT INTO users ( user, name, email, pass) VALUES ?";
+var values = [[ user , name , email , pass]];
 con.query(sql, [values], function(err, result) {
 	if(err) throw err;
 	console.log("Added User 1");
+	con.end();
 }); 
 
 
 }
 
+function AuthenticateUser(req){
+
+var user = req.body.user;
+var pass = req.body.pass;
+
+
+
+}
 
