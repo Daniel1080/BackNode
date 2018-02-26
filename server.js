@@ -52,8 +52,9 @@ var name = req.body.name;
 var email = req.body.email;
 var pass = req.body.password;
 
-var sql = "INSERT INTO users (userid, user, name, email, password) VALUES ('" + userid + "','" + user + "','" + "'" + name + "','" + email + "','" + password + "')";
-con.query(sql, function(err, result) {
+var sql = "INSERT INTO users (userid, user, name, email, pass) VALUES ?";
+var values = [[userid , user , name , email , pass]];
+con.query(sql, [values], function(err, result) {
 	if(err) throw err;
 	console.log("Added User 1");
 }); 
