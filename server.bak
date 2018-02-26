@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
-var mysql = require('mysql');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -14,7 +13,7 @@ app.post('/' , function(req, res){
 	var name = req.body.name;
 	console.log(task);
 	console.log(name);
-	
+	Reg(req);
 	res.send(task + '  ' + '   ' + name );
 
 
@@ -29,4 +28,9 @@ res.send("Hello There");
 app.listen(port);
 console.log("Listening ");
 
+function Reg(req){
 
+console.log(req.body.name);
+
+
+}
