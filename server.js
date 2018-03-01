@@ -68,9 +68,44 @@ con.query(sql, [values], function(err, result) {
 
 function AuthenticateUser(req){
 
+	console.log("Executing Login Req");
+
+	var con2 = mysql.createConnection({
+
+		host: "127.0.0.1",
+		user: "root",
+		password: "000000",
+		database: "sys"
+	});
+	
+	con2.connect(function(err) {
+		if (err ) throw err;
+		ok = true;
+		console.log("Connected to DB2!")
+	});
+
 var user = req.body.user;
 var pass = req.body.pass;
 
+var sql = "SELECT * from sys.users where users.user = " + user + '"'
+
+con2.query(sql, function(err, result2) {
+	if(err) throw err;
+	console.log("User login query complete. ");
+	
+}); 
+
+console.log(result2);
+
+if(result2 == user){
+
+	console.log("User exists in DB");
+	sql = "SELECT * from sys.users where users.user = " + user + "and users.password = " + pass + '"'
+	
+
+ 	
+
+}
 
 
 }
