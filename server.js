@@ -87,7 +87,7 @@ function AuthenticateUser(req){
 var user = req.body.user;
 var pass = req.body.pass;
 
-var sql = "SELECT * from sys.users where users.user = " + user + '"'
+var sql = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 
 con2.query(sql, function(err, result2) {
 	if(err) throw err;
@@ -100,8 +100,8 @@ console.log(result2);
 if(result2 == user){
 
 	console.log("User exists in DB");
-	sql = "SELECT * from sys.users where users.user = " + user + "and users.password = " + pass + '"'
-	
+	sql = "SELECT * from sys.users where users.user = " + user + '"' + "and users.password = " + pass + '"'
+
 
  	
 
