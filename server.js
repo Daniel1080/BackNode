@@ -87,6 +87,9 @@ function AuthenticateUser(req){
 var user = req.body.user;
 var pass = req.body.pass;
 
+console.log(user);
+console.log(pass);
+
 var sql = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 
 con2.query(sql, function(err, result2) {
