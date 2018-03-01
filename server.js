@@ -90,9 +90,9 @@ var pass = req.body.pass;
 console.log(user);
 console.log(pass);
 
-var sql = "SELECT * from sys.users where users.user = "+'"' + user + '"'
+var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 
-con2.query(sql, function(err, result2) {
+con2.query(sql22, function(err, result2) {
 	if(err) throw err;
 	console.log("User login query complete. ");
 	
@@ -103,7 +103,7 @@ console.log(result2);
 if(result2 == user){
 
 	console.log("User exists in DB");
-	sql = "SELECT * from sys.users where users.user = " + user + '"' + "and users.password = " + pass + '"'
+	sql2 = "SELECT * from sys.users where users.user = " + user + '"' + "and users.password = " + pass + '"'
 
 
  	
