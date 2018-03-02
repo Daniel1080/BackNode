@@ -94,7 +94,7 @@ var pass = req.body.pass;
 console.log(user);
 console.log(pass);
 
-GetAuthed();
+
 
 function InitialQ (){
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
@@ -108,10 +108,10 @@ con2.query(sql22, function(err, RESULT2) {
 const GetAuthed = async () =>{
 
 	const RetRel = await InitialQ();
-
+	console.log("Results are here " + RetRel);
 
 }
-
+GetAuthed();
 
 
 
