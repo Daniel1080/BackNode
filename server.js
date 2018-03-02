@@ -96,7 +96,7 @@ console.log(pass);
 
 
 
-const InitialQ = async () => {
+const InitialQ = async => {
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql22, function(err, rows, fields) {
 	if(err) throw err;
@@ -110,7 +110,7 @@ con2.query(sql22, function(err, rows, fields) {
 
 var AwRet;
 
-const getStatus = async () => {
+const getStatus = async => {
 
 	const retaw = await InitialQ();
 	console.log(retaw);
