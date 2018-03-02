@@ -94,30 +94,32 @@ var pass = req.body.pass;
 console.log(user);
 console.log(pass);
 
-var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 
+
+
+var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql22, function(err, result2) {
 	if(err) throw err;
 	console.log("User login query complete. ");
 	RefinedResults = JSON.stringify(result2);
 	console.log("Results are " + RefinedResults);
-	dbUser = RefinedResults.user;
-	console.log("This is the DB user value" + " " + dbUser);
-	return RefinedResults;
-	
-}); 
-
-console.log("Results Outside of callback " + RefinedResults);
+	checkResults(RefinedResults);
+		
+});
 
 
-if(dbUser == user){
+function checkResults(RefinedResults){
 
-	console.log("User exists in DB");
-	sql2 = "SELECT * from sys.users where users.user = " + user + '"' + "and users.password = " + pass + '"'
-}
+dbUser = RefinedResults.user;
+dbPass = RefinedResults.pass;
 
-console.log("Results Outside of callback " + RefinedResults);
-
+console.log("This is user from DB " + dbUser);
+console.log("This is pass from DB " + dbPass);
 
 }
 
+
+
+
+
+}
