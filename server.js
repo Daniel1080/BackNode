@@ -101,8 +101,7 @@ var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql22, function(err, result2) {
 	if(err) throw err;
 	console.log("User login query complete. ");
-	RefinedResults = JSON.stringify(result2);
-	console.log("Results are " + RefinedResults);
+	
 	checkResults(RefinedResults);
 		
 });
