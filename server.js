@@ -109,7 +109,7 @@ function Process(RESULT2){
 
 let RefRel = JSON.stringify(RESULT2);
 console.log(RefRel);
-console.log(RefRel.user);
+console.log(RefRel.list[1]);
 
 }
 
