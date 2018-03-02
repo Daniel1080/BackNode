@@ -105,7 +105,7 @@ con2.query(sql22, function(err, result2) {
 	
 }); 
 
-dbUser = RefinedResults.body.user;
+dbUser = RefinedResults.user;
 console.log("This is the DB user value" + " " + dbUser);
 
 if(result2 == user){
