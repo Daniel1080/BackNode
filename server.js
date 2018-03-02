@@ -96,22 +96,27 @@ console.log(pass);
 
 
 
-
+const InitialQ = async () => {
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql22, function(err, rows, fields) {
 	if(err) throw err;
 	console.log("User login query complete. " + "Result is " + rows[1].user);
 	console.log(fields);
 	checkResults(rows);
+	return rows;
 	
 });
+}
+
+var AwRet;
+
+const getStatus = async () => {
+
+	const retaw = await InitialQ();
+	console.log(retaw);
 
 
-function checkResults(rows){
-
-
-console.log(rows[1] + "Note these are outside query")
-console.log("DONE");
+}
 
 
 
@@ -121,4 +126,3 @@ console.log("DONE");
 
 
 
-}
