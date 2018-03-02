@@ -110,9 +110,10 @@ function Process(RESULT2){
 let RefRel = JSON.stringify(RESULT2);
 let RefRelPar = JSON.parse(RefRel);
 console.log(RefRelPar);
-console.log(RefRelPar[0].user);
-console.log(RefRelPar[0].name);
+dbUser =  RefRelPar[0].user;
+dbPass = RefRelPar[0].pass;
 
+console.log(dbUser);
 }
 
 InitialQ(Process);
