@@ -103,13 +103,18 @@ con2.query(sql22, function(err, result2) {
 	console.log("Results are " + RefinedResults);
 	dbUser = RefinedResults.user;
 	console.log("This is the DB user value" + " " + dbUser);
-	if(dbUser == user){
-
-		console.log("User exists in DB");
-		sql2 = "SELECT * from sys.users where users.user = " + user + '"' + "and users.password = " + pass + '"'
-	}
+	return RefinedResults;
+	
 }); 
 
+console.log("Results Outside of callback " + RefinedResults);
+
+
+if(dbUser == user){
+
+	console.log("User exists in DB");
+	sql2 = "SELECT * from sys.users where users.user = " + user + '"' + "and users.password = " + pass + '"'
+}
 
 console.log("Results Outside of callback " + RefinedResults);
 
