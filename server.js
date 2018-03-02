@@ -102,6 +102,7 @@ con2.query(sql22, function(err, result2) {
 	if(err) throw err;
 	console.log("User login query complete. ");
 	console.log(result2);
+	console.log(result2[1].user);
 	checkResults(result2);
 		
 });
