@@ -111,7 +111,7 @@ con2.query(sql22, function(err, result2) {
 }); 
 
 
-
+console.log("Results Outside of callback " + RefinedResults);
 
 
 }
