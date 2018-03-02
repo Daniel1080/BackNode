@@ -110,17 +110,10 @@ con2.query(sql22, function(err, result2) {
 
 function checkResults(RefinedResults){
 
-Par = JSON.parse(RefinedResults);
-
-console.log(Par.user + "This is the par user");
-
-dbUser = RefinedResults.body.user;
-dbPass = RefinedResults.body.pas;
 
 console.log(RefinedResults + "Note these are outside query")
 
-console.log("This is user from DB " + dbUser);
-console.log("This is pass from DB " + dbPass);
+
 
 }
 
