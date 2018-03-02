@@ -15,9 +15,9 @@ app.post('/' , function(req, res){
 	console.log(task);
 	console.log(name);
 	
-	if(task == 1){RegUsr(req);
-	res.write("Executing Reg");	
-	}
+	res.setHeader('Content-Type', 'application/json');
+
+	if(task == 1){RegUsr(req);}
 	if (task == 2){AuthenticateUser(req, res);}
 
 
@@ -109,7 +109,7 @@ con2.query(sql2, function(err, RESULT2) {
 
 function Process2(){
 
-res.write("user" + dbUser + "dbpass" + dbPass);
+res.send(JSON.stringify({ dbuser : dbUser, dbpass: dbPass }))
 
 }
 
