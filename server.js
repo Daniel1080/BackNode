@@ -98,7 +98,7 @@ console.log(pass);
 
 
 function InitialQ (callback){
-	var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
+	var sql2 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql2, function(err, RESULT2) {
 	if(err) throw err;	
 
