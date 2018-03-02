@@ -106,8 +106,8 @@ con2.query(sql22, function(err, RESULT2) {
 }
 
 const GetAuthed = async () =>{
-
-	const RetRel = await connection() & InitialQ();
+	await connection();
+	const RetRel = await InitialQ();
 	console.log("Results are here " + RetRel);
 
 }
