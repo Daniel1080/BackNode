@@ -105,11 +105,9 @@ con2.query(sql22, function(err, RESULT2) {
 });
 }
 
-async function GetAuthed(){
+const GetAuthed = async () =>{
 
-const RefRel = await InitialQ();
-
-console.log(RefRel);
+	const RetRel = await InitialQ();
 
 
 }
