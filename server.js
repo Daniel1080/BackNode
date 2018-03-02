@@ -94,29 +94,26 @@ var pass = req.body.pass;
 console.log(user);
 console.log(pass);
 
+GetAuthed();
 
-
-const InitialQ = async => {
+function InitialQ (){
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
-con2.query(sql22, function(err, rows, fields) {
-	if(err) throw err;
-	console.log("User login query complete. " + "Result is " + rows[1].user);
-	console.log(fields);
-	checkResults(rows);
-	return rows;
-	
+con2.query(sql22, function(err, RESULT2) {
+	if(err) throw err;	
+
+	return RESULT2;
 });
 }
 
-var AwRet;
+async function GetAuthed(){
 
-const getStatus = async => {
+const RefRel = await InitialQ();
 
-	const retaw = await InitialQ();
-	console.log(retaw);
+console.log(RefRel);
 
 
 }
+
 
 
 
