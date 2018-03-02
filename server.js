@@ -110,8 +110,8 @@ function Process(RESULT2){
 let RefRel = JSON.stringify(RESULT2);
 let RefRelPar = JSON.parse(RefRel);
 console.log(RefRelPar);
-console.log(RefRelPar.user);
-console.log(RefRelPar.user);
+console.log(RefRelPar[0].user);
+console.log(RefRelPar[0].name);
 
 }
 
