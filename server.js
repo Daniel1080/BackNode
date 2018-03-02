@@ -107,8 +107,8 @@ con2.query(sql22, function(err, RESULT2) {
 
 function Process(RESULT2){
 
-console.log("Results are" + RESULT2[0]);
-console.log(JSON.stringify(RESULT2));
+console.log("Results are" + RESULT2);
+console.log(JSON.parse(RESULT2));
 }
 
 InitialQ(Process);
