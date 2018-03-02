@@ -110,7 +110,7 @@ con2.query(sql22, function(err, result2) {
 function checkResults(result2){
 
 
-console.log(result2 + "Note these are outside query")
+console.log(result2[1] + "Note these are outside query")
 console.log("DONE");
 
 
