@@ -100,7 +100,7 @@ console.log(pass);
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql22, function(err, rows, fields) {
 	if(err) throw err;
-	console.log("User login query complete. " + "Result is " + rows);
+	console.log("User login query complete. " + "Result is " + rows[1].user);
 	console.log(fields);
 	checkResults(rows);
 	
