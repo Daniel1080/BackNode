@@ -112,6 +112,7 @@ function checkResults(RefinedResults){
 
 
 console.log(RefinedResults + "Note these are outside query")
+console.log(RefinedResults.user);
 
 
 
