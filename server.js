@@ -102,16 +102,16 @@ con2.query(sql22, function(err, result2) {
 	if(err) throw err;
 	console.log("User login query complete. ");
 	
-	checkResults(RefinedResults);
+	checkResults(result2);
 		
 });
 
 
-function checkResults(RefinedResults){
+function checkResults(result2){
 
 
-console.log(RefinedResults + "Note these are outside query")
-console.log(RefinedResults.user);
+console.log(result2 + "Note these are outside query")
+console.log("DONE");
 
 
 
