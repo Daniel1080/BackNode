@@ -113,6 +113,8 @@ function checkResults(RefinedResults){
 dbUser = RefinedResults.user;
 dbPass = RefinedResults.pass;
 
+console.log(RefinedResults + "Note these are outside query")
+
 console.log("This is user from DB " + dbUser);
 console.log("This is pass from DB " + dbPass);
 
