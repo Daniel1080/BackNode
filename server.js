@@ -98,20 +98,18 @@ console.log(pass);
 
 
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
-con2.query(sql22, function(err, result2) {
+con2.query(sql22, function(err, rows, fields) {
 	if(err) throw err;
-	console.log("User login query complete. ");
-	console.log(result2);
-	console.log(result2[1].user);
-	checkResults(result2);
-		
+	console.log("User login query complete. " + "Result is " + rows);
+	checkResults(rows);
+	
 });
 
 
-function checkResults(result2){
+function checkResults(rows){
 
 
-console.log(result2[1] + "Note these are outside query")
+console.log(rows[1] + "Note these are outside query")
 console.log("DONE");
 
 
