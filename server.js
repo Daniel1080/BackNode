@@ -96,22 +96,21 @@ console.log(pass);
 
 
 
-function InitialQ (){
+function InitialQ (callback){
 var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
 con2.query(sql22, function(err, RESULT2) {
 	if(err) throw err;	
 
-	return RESULT2;
+	callback(RESULT2);
 });
 }
 
-const GetAuthed = async () =>{
-	await connection();
-	const RetRel = await InitialQ();
-	console.log("Results are here " + RetRel);
+function Process(RESULT2){
 
+console.log("Results are" + RESULT2);
 }
-GetAuthed();
+
+InitialQ(Process);
 
 
 
