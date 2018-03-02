@@ -18,7 +18,7 @@ app.post('/' , function(req, res){
 	if(task == 1){RegUsr(req);
 	res.write("Executing Reg");	
 	}
-	if (task == 2){AuthenticateUser(req);}
+	if (task == 2){AuthenticateUser(req, res);}
 
 
 });
@@ -66,7 +66,7 @@ con.query(sql, [values], function(err, result) {
 
 }
 
-function AuthenticateUser(req){
+function AuthenticateUser(req, res){
 
 	console.log("Executing Login Req");
 
@@ -96,13 +96,21 @@ console.log(pass);
 
 
 
+
 function InitialQ (callback){
-var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
-con2.query(sql22, function(err, RESULT2) {
+	var sql22 = "SELECT * from sys.users where users.user = "+'"' + user + '"'
+con2.query(sql2, function(err, RESULT2) {
 	if(err) throw err;	
 
 	callback(RESULT2);
 });
+}
+
+
+function Process2(){
+
+res.write("user" + dbUser + "dbpass" + dbPass);
+
 }
 
 function Process(RESULT2){
@@ -114,12 +122,11 @@ dbUser =  RefRelPar[0].user;
 dbPass = RefRelPar[0].pass;
 
 console.log(dbUser);
+
+if (user == dbUser){Process2()};
+
 }
-
 InitialQ(Process);
-
-
-
 }
 
 
