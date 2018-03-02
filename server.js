@@ -107,7 +107,8 @@ con2.query(sql22, function(err, RESULT2) {
 
 function Process(RESULT2){
 
-console.log(RESULT2.values());
+let RefRel = JSON.parse(RESULT2);
+console.log(Object.values());
 
 }
 
