@@ -82,7 +82,7 @@ function AuthenticateUser(req){
 		database: "sys"
 	});
 	
-	con2.connect(function(err) {
+	con2.connect(function connection(err) {
 		if (err ) throw err;
 		ok = true;
 		console.log("Connected to DB2!")
@@ -107,7 +107,7 @@ con2.query(sql22, function(err, RESULT2) {
 
 const GetAuthed = async () =>{
 
-	const RetRel = await InitialQ();
+	const RetRel = await connection() & InitialQ();
 	console.log("Results are here " + RetRel);
 
 }
