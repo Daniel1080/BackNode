@@ -107,9 +107,11 @@ con2.query(sql22, function(err, RESULT2) {
 
 function Process(RESULT2){
 
-var RefRel = JSON.stringify(RESULT2 , ['user' , 'passs' ]);
-console.log(RefRel);
-console.log(RefRel.user);
+var dbUser = JSON.stringify(RESULT2 , ['user']);
+var dbPass = JSON.stringify(RESULT2 , ['pass']);
+
+console.log("Pass is" + dbPass);
+console.log("User is this " + dbUser);
 
 
 }
